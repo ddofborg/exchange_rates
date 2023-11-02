@@ -1,2 +1,15 @@
-# exchange_rates
-Get a list of exchange rates for a list of currencies for a specific date (or close to it). Data source ECB.
+Get a list of exchange rates for a given currency on a given date. Data is download from
+the European Central Bank history zipfile.
+
+Note, rates are not cached. Each request will download the data again. 
+
+Usage:
+
+```python
+>>> from exchange_rates import get_exchange_rates
+>>> print( get_exchange_rates('USD', target_currencies=['EUR', 'CAD', 'USD'], on_date='2023-10-01') )
+{'EUR': 0.9496676163342831, 'CAD': 1.3613485280151947, 'USD': 1.0}
+>>> print( get_exchange_rates('EUR', target_currencies=['EUR', 'CAD', 'USD'], on_date='2023-10-01') )
+{'EUR': 1.0, 'CAD': 1.4335, 'USD': 1.053}
+```
+
