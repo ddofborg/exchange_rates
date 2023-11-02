@@ -13,3 +13,4 @@ Usage:
 {'EUR': 1.0, 'CAD': 1.4335, 'USD': 1.053}
 ```
 
+Idea is based on @Andrewnolan13 comment: https://github.com/MicroPyramid/forex-python/issues/149#issuecomment-1787050118
