@@ -43,6 +43,9 @@ def get_exchange_rates(base_currency: str,
         `target_currencies` can be a list of currency symbols to return. If empty,
         all symbols are returned.
 
+        `continue_on_error` determines if an exeption should be raised if a currency
+        is not found or conversion cannot take place.
+
         Returns: `{ CUR1: rate1, CUR2: rate2, ... }`.
     '''
 
