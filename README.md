@@ -1,8 +1,6 @@
 Get a list of exchange rates for a given currency on a given date. Data is download from
 the European Central Bank history zipfile.
 
-Note, rates are not cached. Each request will download the data again. 
-
 Usage:
 
 ```python
