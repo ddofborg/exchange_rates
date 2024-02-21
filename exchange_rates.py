@@ -76,10 +76,13 @@ def get_exchange_rates(base_currency: str,
     # Check for cached version of the downloaded data
     if cache and os.path.exists(CACHE_FILE) and os.path.getmtime(CACHE_FILE) > (time.time() - CACHE_TTL):
 
+        LOG.debug('Loading from cached file: %s', CACHE_FILE)
         with open(CACHE_FILE, 'r') as fd:
             csv_reader = json.load(fd)
 
     else:
+
+        LOG.debug('Loading from source url: %s', SOURCE_URL)
 
         # Downlaod ZIP with CSV data from Erupean Central Bank
         response = requests.get(SOURCE_URL)
