@@ -35,7 +35,7 @@ CACHE_TTL = 86400  # 24 hours
 def get_exchange_rates(base_currency: str,
                        target_currencies: list | tuple | set = None,
                        *,
-                       on_date: str = None, within_days=3,
+                       on_date: str = None, within_days=4,
                        continue_on_error = True,
                        cache = True):
     '''
@@ -47,7 +47,9 @@ def get_exchange_rates(base_currency: str,
             If `on_date` is `None`, then the current date is used.
 
             If there is no exact date match with the data, then the closest match to
-            `on_date` within `within_days` is returned.
+            `on_date` within `within_days` is returned. Default is 4 days, because
+            during holidays no exchange rates a published. Easter has 4 free days.
+            
 
             `target_currencies` can be a list of currency symbols to return. If empty,
             all symbols are returned.
